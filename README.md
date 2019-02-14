@@ -153,6 +153,48 @@ Jails can also be configured as individual .conf files placed in the jail.d dire
     bantime = 3600 
 
 
+ ##To block DOS 
+
+    [http-get-dos]
+
+    enabled = true
+    port = http,https
+    filter = http-get-dos
+    logpath = /var/log/apache2/access.log
+    # maxretry is how many GETs we can have in the findtime period before getting narky
+    maxretry = 300
+    # findtime is the time period in seconds in which we're counting "retries" (300 seconds = 5 mins)
+    findtime = 300
+    # bantime is how long we should drop incoming GET requests for a given IP for, in this case it's 5 minutes
+    bantime = 300
+    action = iptables[name=HTTP, port=http, protocol=tcp]
+
+ ## Next step creat a file  /etc/fail2ban/filter.d/http-get-dos.conf 
+
+    # Fail2Ban configuration file
+    #
+    # Author: TCRC
+    #
+    [Definition]
+    
+    # Option: failregex
+    # Note: This regex will match any GET entry in your logs, so basically all valid and not valid entries are a match.
+    # You should set up in the jail.conf file, the maxretry and findtime carefully in order to avoid false positives.
+    
+    failregex = ^<HOST> -.*"(GET|POST).*
+    
+    # Option: ignoreregex
+    # Notes.: regex to ignore. If this regex matches, the line is ignored.
+    # Values: TEXT
+    #
+    ignoreregex =
+
+## Want to start fail2ban at boot 
+
+    systemctl enable fail2ban
+
+
+
 
 
 ### Reference
