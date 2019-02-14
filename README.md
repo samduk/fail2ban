@@ -95,62 +95,62 @@ Jails can also be configured as individual .conf files placed in the jail.d dire
 
 ##To block failed login attempts use the below jail. 
 
- [apache] 
+    [apache] 
 
- enabled = true 
- port = http,https 
- filter = apache-auth 
- logpath = /var/log/apache2/*error.log 
- maxretry = 3 
- bantime = 600 
+    enabled = true 
+    port = http,https 
+    filter = apache-auth 
+    logpath = /var/log/apache2/*error.log 
+    maxretry = 3 
+    bantime = 600 
 
  
  ##To block the remote host that is trying to request suspicious URLs, use the below jail. 
 
- [apache-overflows] 
+    [apache-overflows] 
 
- enabled = true 
- port = http,https 
- filter = apache-overflows 
- logpath = /var/log/apache2/*error.log 
- maxretry = 3 
- bantime = 600 
+    enabled = true 
+    port = http,https 
+    filter = apache-overflows 
+    logpath = /var/log/apache2/*error.log 
+    maxretry = 3 
+    bantime = 600 
 
  
  ##To block the remote host that is trying to search for scripts on the website to execute, use the below jail. 
 
- [apache-noscript] 
+    [apache-noscript] 
 
- enabled = true 
- port = http,https 
- filter = apache-noscript 
- logpath = /var/log/apache2/*error.log 
- maxretry = 3 
- bantime = 600 
+    enabled = true 
+    port = http,https 
+    filter = apache-noscript 
+    logpath = /var/log/apache2/*error.log 
+    maxretry = 3 
+    bantime = 600 
 
  
  ##To block the remote host that is trying to request malicious bot, use below jail. 
 
- [apache-badbots] 
+    [apache-badbots] 
 
- enabled = true 
- port = http,https 
- filter = apache-badbots 
- logpath = /var/log/apache2/*error.log 
- maxretry = 3 
- bantime = 600 
+    enabled = true 
+    port = http,https 
+    filter = apache-badbots 
+    logpath = /var/log/apache2/*error.log 
+    maxretry = 3 
+    bantime = 600 
 
   
  ##To block the failed login attempts on the SSH server, use the below jail. 
 
- [ssh] 
- 
- enabled = true 
- port = ssh 
- filter = sshd 
- logpath = /var/log/auth.log 
- maxretry = 3 
- bantime = 3600 
+    [ssh] 
+    
+    enabled = true 
+    port = ssh 
+    filter = sshd 
+    logpath = /var/log/auth.log 
+    maxretry = 3 
+    bantime = 3600 
 
 
 
