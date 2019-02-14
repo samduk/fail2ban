@@ -1,0 +1,2 @@
+# fail2ban
+Recently I setup a VPS to keep the logs of different server for analysis. I have strong evidence to believe that my server is under brute-force attack. I did harden the SSH and firewall (I will share it with different Repository Name), nevertheless, I would like to block the culprit in an automated way and fail2ban came to handy. Though to keep a documentation about it to share with friends and for future reference.
