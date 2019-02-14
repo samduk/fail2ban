@@ -94,6 +94,7 @@ Jails can also be configured as individual .conf files placed in the jail.d dire
 - jail.local 
 
 ##To block failed login attempts use the below jail. 
+
  [apache] 
 
  enabled = true 
@@ -105,6 +106,7 @@ Jails can also be configured as individual .conf files placed in the jail.d dire
 
  
  ##To block the remote host that is trying to request suspicious URLs, use the below jail. 
+
  [apache-overflows] 
 
  enabled = true 
@@ -116,6 +118,7 @@ Jails can also be configured as individual .conf files placed in the jail.d dire
 
  
  ##To block the remote host that is trying to search for scripts on the website to execute, use the below jail. 
+
  [apache-noscript] 
 
  enabled = true 
@@ -127,6 +130,7 @@ Jails can also be configured as individual .conf files placed in the jail.d dire
 
  
  ##To block the remote host that is trying to request malicious bot, use below jail. 
+
  [apache-badbots] 
 
  enabled = true 
@@ -138,7 +142,9 @@ Jails can also be configured as individual .conf files placed in the jail.d dire
 
   
  ##To block the failed login attempts on the SSH server, use the below jail. 
+
  [ssh] 
+ 
  enabled = true 
  port = ssh 
  filter = sshd 
